@@ -1,0 +1,26 @@
+div.fixed{
+    position: fixed;
+    width: 30%;
+    height:50%;
+    bottom:50px;
+    right:10px;
+    background-image: url("deltabackground.jpg");
+    border: 1px solid #8AC007;
+}
+div.form{
+    position: fixed;
+    bottom:10px;
+    right:67px;
+}
+div.button{
+    position: fixed;
+    bottom:20px;
+    right:15px;
+}
+div.head{
+    position: fixed;
+    width: 30%;
+    bottom:373px;
+    height:5%;
+    right:10px;
+}

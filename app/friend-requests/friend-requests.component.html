@@ -1,0 +1,30 @@
+<div class="container container">
+    <h4 style="color:red;text-align: left;">Friend Requests!</h4>
+    <div *ngIf="users.length!==0;else elseBlock;">
+      <table class="table table-striped table-responsive">
+        <thead>
+          <tr>
+            <th>UserName</th>
+            <th>Email</th>
+            <th>MobileNumber</th>
+            <th>DateOfBirth</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let c of users">
+          <tr>
+            <td>{{c._firstName+" "+c._middleName+" "+" "+c._lastName}}</td>
+            <td>{{c._email}}</td>
+            <td>{{c._mobileNumber}}</td>
+            <td>{{c._dob}}</td>
+            <td><button class="btn btn-success" (click)="accept(c)">Approve Friend Request</button>
+                <button class="btn btn-danger" (click)="reject(c)">Delete Friend Request</button> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #elseBlock>
+      <p class="text-sm-left text-justify text-warning">No new Requests</p>
+    </ng-template>
+  </div>

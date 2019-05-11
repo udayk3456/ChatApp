@@ -1,0 +1,33 @@
+<div class="card bg-primary text-white container">
+  <nav class="navbar navbar-expand-sm bg-primary navbar-light">
+    <ul class="navbar-nav">
+      <li>
+        <div class="dropdown ">
+          <button class="dropbtn bg-primary">
+            <p class="card-text">{{user._firstName+" "+user._middleName+" "+user._lastName}}</p>
+          </button>
+          <div class="dropdown-content bg-success">
+            <p class="card-text">UserId : {{user._id}}</p>
+            <p class="card-text">Email : {{user._email}}</p>
+            <p class="card-text">DataOfBirth : {{user._dob}}</p>
+            <p class="card-text">MobileNumber : {{user._mobileNumber}}</p>
+          </div>
+        </div>
+      </li>
+      <li><button class="btn btn-info" (click)="userClick()">SuggestedUsers</button></li>
+      <li><button class="btn btn-warning" (click)="friendClick()">FriendRequests</button></li>
+      <li><button class="btn btn-info" (click)="friends()">Friends</button></li>
+      <li><a class="btn btn-primary" href="/logout" type="button">Logout</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div *ngIf="userclick">
+  <app-suggested-users></app-suggested-users>
+</div>
+<div *ngIf="friendclick">
+  <app-friend-requests></app-friend-requests>
+</div>
+<div *ngIf="friendlist">
+  <app-friends></app-friends>
+</div>

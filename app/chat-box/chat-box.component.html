@@ -1,0 +1,23 @@
+<div class="container container">
+  <div class="head">
+    <h5 style="width:30%;position: fixed;" class="bg-info text-white">
+      {{friend._firstName+" "+friend._middleName+" "+" "+friend._lastName}}
+    </h5>
+  </div>
+    <div class="fixed table-responsive">
+      <div *ngFor="let b of chat;">
+        <ng-template #elseBlock>
+          <p class="text-sm-left text-justify text-success">{{b._message}}</p>
+        </ng-template>
+          <p *ngIf="b._sentBy._id===user._id; else elseBlock" class="text-sm-right text-justify text-dark">{{b._message}}</p>
+      </div>
+    </div>
+  <form (ngSubmit)="data()">
+    <div class="form">
+      <textarea [(ngModel)]="chatModel.message" name="message" rows="1" cols="34"></textarea>
+    </div>
+    <div class="button">
+      <button class="submit">send</button>
+    </div>
+  </form>
+</div>
